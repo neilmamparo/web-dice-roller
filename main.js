@@ -62,14 +62,14 @@ function rollDice() {
     }
 
     // Roll the dice by making a request to the API
-    fetch(`${API_URL}/roll/:count${selectedCount}`)
+    fetch(`${API_URL}/roll/:${selectedCount}`)
         .then(response => response.json())
         .then(data => {
             // Update the dice value displays with the results
             for (let i = 1; i <= selectedCount; i++) {
                 const diceValue = document.getElementById(`dicevalue${i}`);
                 if (diceValue) {
-                    diceValue.textContent = data.results[i - 1];
+                    diceValue.textContent = data.dice[i - 1];
                 }
             }
         });
