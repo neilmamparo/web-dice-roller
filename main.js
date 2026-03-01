@@ -1,20 +1,20 @@
-// Configuration
+// configuration
 const API_URL = 'https://nodejs-dice-roller-crbxatb0dyanc8bc.centralus-01.azurewebsites.net';
 
-// Function to create the dice count selector
+// function to create the dice count selector
 function createDiceSelector() {
-    // Create dropdown menu
+    // create dropdown menu
     const diceCountSelect = document.createElement("select");
     diceCountSelect.id = "diceCount";
     
-    // Add default "Select dice count" option
+    // add default "Select dice count" option
     const defaultOption = document.createElement("option");
     defaultOption.textContent = "Select dice count";
     defaultOption.disabled = true;
     defaultOption.selected = true;
     diceCountSelect.appendChild(defaultOption);
     
-    // Add options for 1-6 dice
+    // add options for 1-6 dice
     for (let i = 1; i <= 6; i++) {
         const option = document.createElement("option");
         option.value = i;
@@ -22,14 +22,14 @@ function createDiceSelector() {
         diceCountSelect.appendChild(option);
     }
     
-    // Insert the select element into the dicecount div
+    // insert the select element into the dicecount div
     document.getElementById("dicecount").appendChild(diceCountSelect);
     
-    // Event listener that shows/hides dice based on selection
+    // event listener that shows/hides dice based on selection
     diceCountSelect.addEventListener("change", (event) => {
         const selectedCount = parseInt(event.target.value);
         updateDiceVisibility(selectedCount);
-        // Auto-roll when selection changes
+        // auto-roll when selection changes
         rollDice();
     });
     
@@ -38,7 +38,7 @@ function createDiceSelector() {
 
 const diceCountSelect = createDiceSelector();
 
-// Update dice visibility based on selected count
+// update dice visibility based on selected count
 function updateDiceVisibility(selectedCount) {
     for (let i = 1; i <= 6; i++) {
         const dice = document.getElementById(`dice${i}`);
@@ -48,10 +48,10 @@ function updateDiceVisibility(selectedCount) {
     }
 }
 
-// Initialize with all dice hidden (until selection is made)
+// initialize with all dice hidden (until selection is made)
 updateDiceVisibility(0);
 
-// Random dice roll based on button press
+// random dice roll based on button press
 function rollDice() {
     const selectedCount = parseInt(diceCountSelect.value);
     
@@ -75,28 +75,28 @@ function rollDice() {
         });
 }
 
-// Function to initialize the page
+// function to initialize the page
 function initializePage() {
-    // Set default selection to 1
+    // set default selection to 1
     diceCountSelect.value = "1";
     updateDiceVisibility(1);
-    
-    // Automatically roll dice on page load
+
+    // automatically roll dice on page load
     rollDice();
     
-    // Focus the roll button
+    // focus the roll button
     document.getElementById("rollButton").focus();
 }
 
-// Add click event listener to the roll button
+// add click event listener to the roll button
 document.getElementById("rollButton").addEventListener("click", rollDice);
 
-// Add keyboard event listener for Enter key
+// add keyboard event listener for Enter key
 document.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
         rollDice();
     }
 });
 
-// Run initialization when page loads
+// run initialization when page loads
 window.addEventListener("load", initializePage);
