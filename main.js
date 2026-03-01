@@ -62,7 +62,7 @@ function rollDice() {
     }
 
     // Roll the dice by making a request to the API
-    fetch(`${API_URL}/roll/:${selectedCount}`)
+    fetch(`${API_URL}/roll/${selectedCount}`)
         .then(response => response.json())
         .then(data => {
             // Update the dice value displays with the results
