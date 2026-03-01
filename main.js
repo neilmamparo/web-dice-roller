@@ -1,3 +1,6 @@
+// Configuration
+const API_URL = 'https://nodejs-dice-roller-crbxatb0dyanc8bc.centralus-01.azurewebsites.net';
+
 // Function to create the dice count selector
 function createDiceSelector() {
     // Create dropdown menu
@@ -57,16 +60,19 @@ function rollDice() {
         alert("Please select the number of dice first!");
         return;
     }
-    
-    for (let i = 1; i <= 6; i++) {
-        if (i <= selectedCount) {
-            const diceValue = document.getElementById(`dicevalue${i}`);
-            if (diceValue) {
-                const randomValue = Math.floor(Math.random() * 6) + 1;
-                diceValue.textContent = randomValue;
+
+    // Roll the dice by making a request to the API
+    fetch(`${API_URL}/roll/:count${selectedCount}`)
+        .then(response => response.json())
+        .then(data => {
+            // Update the dice value displays with the results
+            for (let i = 1; i <= selectedCount; i++) {
+                const diceValue = document.getElementById(`dicevalue${i}`);
+                if (diceValue) {
+                    diceValue.textContent = data.results[i - 1];
+                }
             }
-        }
-    }
+        });
 }
 
 // Function to initialize the page
