@@ -1,12 +1,10 @@
 # Web Dice Roller
 
-<img width="691" height="396" alt="Screenshot 2026-11-26 at 1 53 48 PM" src="https://github.com/user-attachments/assets/2a8c5222-ddab-492b-8dcd-5306bbee547e" />
-
 (https://green-plant-05d99be1e.4.azurestaticapps.net/)
 
 ## Overview
 
-Web Dice Roller is a web application that allows users to roll between one and six dice. It uses a Node.js server to generate random dice results and sends them to the browser, where they are displayed on the page. https://green-plant-05d99be1e.4.azurestaticapps.net/
+Web Dice Roller is a web application that allows users to roll between one and six dice. It uses a Node.js server to generate random dice results and sends them to the browser, where they are displayed on the page. 
 
 ## Features
 
