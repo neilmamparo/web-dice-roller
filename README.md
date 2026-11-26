@@ -1,6 +1,6 @@
 # Web Dice Roller
 
-<img width="1328" height="591" alt="Screenshot 2026-11-26 at 1 53 48 PM" src="https://github.com/user-attachments/assets/2a8c5222-ddab-492b-8dcd-5306bbee547e" />
+<img width="864" height="496" alt="Screenshot 2026-11-26 at 1 53 48 PM" src="https://github.com/user-attachments/assets/2a8c5222-ddab-492b-8dcd-5306bbee547e" />
 [**Link to App**](https://green-plant-05d99be1e.4.azurestaticapps.net/)
 
 ## Overview
