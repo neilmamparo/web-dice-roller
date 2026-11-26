@@ -33,4 +33,5 @@ Web Dice Roller is a web application that allows users to roll between one and s
 The webpage allows users to select how many dice they want to roll. When a roll is requested, the frontend sends a request to the Node.js server. The server generates random numbers between 1 and 6 for each die and returns the results. The webpage then updates the dice displays with the returned values.
 
 ## Video Demo
+https://github.com/user-attachments/assets/78c2a2d6-caa1-417e-a43e-3e6c7441fc40
 
